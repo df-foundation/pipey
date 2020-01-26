@@ -62,7 +62,9 @@ Print = Pipeable(print, use_first_arg_only=True)
 
 To remain unambiguous, by default we disable `Pipeable`-decorated objects to be called normally -- i.e. they can only be called through the piping syntax, with `>>`. This prevents unintended behavior when a function only has optional named parameters, in which case the Pipeable function would be called before the `>>` operation had a chance to pipe an input.
 
-Nonetheless, we support traditional calling of our Pipeable functions using the keyword argument `use_first_arg_only`, though we urge you to **have at least one required positional argument in your function definition** to ensure this behaves as intended. This behavior can be enables as follows:
+Nonetheless, we support traditional calling of our Pipeable functions using the keyword argument `use_first_arg_only`, though we urge you to **have at least one required positional argument in your function definition** to ensure this behaves as intended. Moreover, all other named parameters should always be explicitly (not positionally) passed to ensure the function fails without the unnamed argument -- the decorator enables a `try/except` to determine whether you mean to call the function or pass the piped argument to it, so the function call needs to fail in order for the piping argument to be passed.
+
+This behavior can be enables as follows:
 
 ```
 Print = Pipeable(print, try_normal_call_first=True)
