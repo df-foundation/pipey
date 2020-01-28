@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://github.com/dataframehq/pipey/raw/master/docs/_static/img/Pipey.png?raw=true" height="90px">
+  <img src="https://github.com/df-foundation/pipey/raw/master/docs/_static/img/Pipey.png?raw=true" height="90px">
 </p>
 
-![](https://github.com/dataframehq/pipey/workflows/Python%20CI/badge.svg)
+![](https://github.com/df-foundation/pipey/workflows/Python%20CI/badge.svg)
 
 
 ---
@@ -20,7 +20,7 @@ pip install pipey
 The entirety of `pipey`'s functionality can be captured in the `pipey.Pipeable` class, which can be passed a function to create a Pipeable-compatible function or used as a decorator around a new function. Both of these functionalities are shown below.
 
 <p align="center">
-  <img src="https://github.com/dataframehq/pipey/raw/master/docs/_static/img/example.png?raw=true" height="300px">
+  <img src="https://github.com/df-foundation/pipey/raw/master/docs/_static/img/example.png?raw=true" height="300px">
 </p>
 
 
