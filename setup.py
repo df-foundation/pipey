@@ -6,13 +6,13 @@ with open("README.md", "r") as fh:
 
 setup(
     name='pipey',
-    version='0.0.1a4',
+    version='0.0.1a5',
     license='GPLv3',
     description='Declarative syntactic sugar that enables piping in python.',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author='Joseph Moon',
-    author_email='joseph@opendataframe.com',
+    author='Robert Yi',
+    author_email='robert@opendataframe.com',
     url='https://github.com/dataframehq/pipey',
     keywords=['pipe', 'declarative', 'python', 'data science'],
     packages=setuptools.find_packages(),
