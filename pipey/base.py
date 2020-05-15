@@ -14,6 +14,14 @@ class Pipeable():
     def __rshift__(self, other):
         return other.base_object(self.base_object, *other.args, **other.kwargs)
 
+    def __lshift__(self, other):
+        if self.unpack_input:
+            return self.base_object(*other, *self.args, **self.kwargs)
+        elif self.use_first_arg_only:
+            return self.base_object(other[0], *self.args, **self.kwargs)
+        else:
+            return self.base_object(other, *self.args, **self.kwargs)
+
     def __rrshift__(self, other):
         if self.unpack_input:
             return self.base_object(*other, *self.args, **self.kwargs)
@@ -21,6 +29,9 @@ class Pipeable():
             return self.base_object(other[0], *self.args, **self.kwargs)
         else:
             return self.base_object(other, *self.args, **self.kwargs)
+
+    def __llshift__(self, other):
+        return other.base_object(self.base_object, *other.args, **other.kwargs)
 
     def __getattr__(self, attribute):
         return getattr(self.base_object, attribute)
